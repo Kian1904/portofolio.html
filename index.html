@@ -8,7 +8,7 @@
     <!-- ========================================== -->
     <!--   FAVICON SYSTEM (PENGGANTI GAMBAR BUMI)   -->
     <!-- ========================================== -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23000000'/><text y='65' x='15' font-family='sans-serif' font-size='55' font-weight='900' fill='%232fe48a'>K.</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23000000'/><text y='65' x='50' text-anchor='middle' font-size='70' fill='%232fe48a' font-weight='800'>K</text></svg>">
     
     <!-- ========================================== -->
     <!--   METADATA BANNER OPEN GRAPH (OG) SYSTEM   -->
@@ -80,7 +80,7 @@
         .btn-contact:hover { background: var(--text-primary); color: #000; }
 
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; position: relative; }
-        .status-wrapper { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 30px; width: fit-content; margin-bottom: 30px; }
+        .status-wrapper { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 30px; width: fit-content; }
         .status-dot { width: 6px; height: 6px; background-color: var(--accent-green); border-radius: 50%; box-shadow: 0 0 8px var(--accent-green); animation: pulseGlow 2s infinite; }
         @keyframes pulseGlow { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
         .status-wrapper span { font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); }
@@ -104,19 +104,26 @@
         .bento-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         
         /* Modifikasi Elemen Anchor Bento Biar Interaktif Luar Dalam */
-        .bento-node { text-decoration: none; text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 35px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); cursor: pointer; }
+        .bento-node { text-decoration: none; text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 35px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
         .bento-node:hover { border-color: var(--accent-green); background: rgba(22, 22, 23, 0.8); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(47, 228, 138, 0.05); }
 
         .col-2 { grid-column: span 2; }
         .node-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .node-tag { font-family: var(--font-mono); font-size: 10px; background: rgba(255,255,255,0.04); padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .node-tag { font-family: var(--font-mono); font-size: 10px; background: rgba(255,255,255,0.04); padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border-color); color: var(--text-secondary); transition: all 0.3s ease; }
         .bento-node:hover .node-tag { color: var(--accent-green); border-color: rgba(47, 228, 138, 0.3); }
 
         .bento-node h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.3px; color: var(--text-primary); }
         .bento-node p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
 
-        .node-display { width: 100%; height: 150px; background: #08080a; border-radius: 14px; margin-top: 25px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.08); font-size: 28px; transition: all 0.4s ease; }
+        .node-display { width: 100%; height: 150px; background: #08080a; border-radius: 14px; margin-top: 25px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; overflow: hidden; transition: all 0.3s ease; }
         .bento-node:hover .node-display { color: var(--accent-green); border-color: rgba(47, 228, 138, 0.2); background: #0d0d11; }
+
+        .node-display img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
 
         .identity-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 45px; align-items: start; }
         .biography p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 20px; text-align: justify; }
@@ -126,10 +133,10 @@
         .spec-table li strong { color: var(--text-primary); font-weight: 400; }
 
         .pill-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
-        .pill-cloud span { font-family: var(--font-mono); font-size: 11px; padding: 6px 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 20px; color: var(--text-primary); }
+        .pill-cloud span { font-family: var(--font-mono); font-size: 11px; padding: 6px 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 20px; color: var(--text-secondary); }
 
         .rate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .rate-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 45px 35px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .rate-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 45px 35px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; position: relative; }
         .rate-card.highlight { border-color: var(--accent-green); background: rgba(10, 15, 12, 0.7); }
         
         .badge-premium { position: absolute; top: 25px; right: 35px; font-family: var(--font-mono); font-size: 9px; background: var(--accent-green); color: #000; padding: 3px 10px; border-radius: 20px; font-weight: 700; }
@@ -141,7 +148,7 @@
         .bullet-perks li { font-size: 14px; color: var(--text-secondary); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
         .bullet-perks i { color: var(--accent-green); font-size: 11px; }
 
-        .btn-checkout { width: 100%; padding: 14px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); color: var(--text-primary); font-weight: 600; font-size: 13px; cursor: pointer; text-align: center; text-decoration: none; display: block; transition: all 0.3s ease; }
+        .btn-checkout { width: 100%; padding: 14px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); color: var(--text-primary); font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: block; }
         .rate-card.highlight .btn-checkout { background: var(--accent-green); color: #000; border: none; }
         .btn-checkout:hover { transform: translateY(-2px); background: var(--text-primary); color: #000; }
 
@@ -195,19 +202,21 @@
         </div>
         
         <div class="bento-layout">
-            <!-- FIX SECARA AKURAT: Menuju web aplikasi tools sekolahmu -->
+            <!-- K's Tools for School -->
             <a href="https://kian1904.github.io/ringkas-tugas/" target="_blank" class="bento-node col-2 reveal">
                 <div class="node-top">
                     <span class="node-tag">Web App + AI Core <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 5px;"></i></span>
                 </div>
                 <div>
                     <h3>K's Tools for School</h3>
-                    <p>Platform manajemen edukasi berbasis sistem cerdas. Mengintegrasikan logika multi-LLM (Groq & NVIDIA NIM) dan gerbang otentikasi Supabase Auth guna mengamankan data fungsional siswa.</p>
+                    <p>Platform manajemen edukasi berbasis sistem cerdas. Mengintegrasikan logika multi-LLM (Groq & NVIDIA NIM) dan gerbang otentikasi Supabase Auth guna mengamankan data fungsional siswa dan guru.</p>
                 </div>
-                <div class="display-image src="K Tools.jpg""><i class="fa-solid fa-brain"></i></div>
+                <div class="node-display">
+                    <img src="K Tools.jpg" alt="K's Tools for School Platform">
+                </div>
             </a>
 
-            <!-- FIX: Ditambahkan tautan luar aktif menuju website Sila di Netlify -->
+            <!-- Custom Web Romansa -->
             <a href="https://untuk-sila.netlify.app/" target="_blank" class="bento-node reveal">
                 <div class="node-top">
                     <span class="node-tag">Custom Website <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 5px;"></i></span>
@@ -216,7 +225,9 @@
                     <h3>Custom Web "Romansa"</h3>
                     <p>Digital narrative craft khusus kelulusan dengan kalkulasi durasi baca psikologis, rendering partikel kelopak bunga berguguran, serta pemutar instrumen terotomatisasi.</p>
                 </div>
-                <div class="display-image src="Custom website.jpg""><i class="fa-solid fa-spa"></i></div>
+                <div class="node-display">
+                    <img src="Custom website.jpg" alt="Custom Web Romansa">
+                </div>
             </a>
         </div>
     </section>
@@ -228,7 +239,7 @@
                     <span>The Creator</span>
                     <h2>Profil & Metodologi</h2>
                 </div>
-                <p>Aku mengembangkan arsitektur web modern secara independen melalui pendekatan logika murni. Menggabungkan efisiensi penulisan kode, akurasi layout visual, serta optimasi performa backend guna melahirkan website komersial yang berdaya saing tinggi.</p>
+                <p>Aku mengembangkan arsitektur web modern secara independen melalui pendekatan logika murni. Menggabungkan efisiensi penulisan kode, akurasi layout visual, serta optimasi performa baca untuk setiap proyek yang dikerjakan secara profesional.</p>
                 <div class="pill-cloud">
                     <span>Native HTML5</span>
                     <span>Vanilla JS</span>
