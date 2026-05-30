@@ -164,8 +164,9 @@
             .section-wrapper { padding: 60px 5% 40px; }
         }
 
-        .reveal { opacity: 0; transform: translateY(25px); transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal { opacity: 1; transform: translateY(0); transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .reveal.animating { animation: slideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -312,10 +313,14 @@
     <script>
         const displayObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animating');
+                }
             });
         }, { threshold: 0.05 });
-        document.querySelectorAll('.reveal').forEach(node => displayObserver.observe(node));
+        document.querySelectorAll('.reveal').forEach(node => {
+            displayObserver.observe(node);
+        });
     </script>
 </body>
 </html>
