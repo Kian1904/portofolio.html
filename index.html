@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kian — Premium Web Solutions</title>
     
-    <!-- ========================================== -->
-    <!--   FAVICON SYSTEM (PENGGANTI GAMBAR BUMI)   -->
-    <!-- ========================================== -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23000000'/><text y='65' x='50' text-anchor='middle' font-size='70' fill='%232fe48a' font-weight='800'>K</text></svg>">
     
-    <!-- ========================================== -->
-    <!--   METADATA BANNER OPEN GRAPH (OG) SYSTEM   -->
-    <!-- ========================================== -->
     <meta name="description" content="Merakit ekosistem web berperforma tinggi dengan estetika modern. Solusi kustom tanpa template pasaran.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kian1904.github.io/ringkas-tugas/">
@@ -21,12 +15,10 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kian — High-End Web Developer">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop">
 
-    <!-- Fonts & Icons Bawaan Safe-Delivery -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Mono&display=swap" rel="stylesheet">
@@ -101,30 +93,81 @@
         .header-block span { font-family: var(--font-mono); color: var(--accent-green); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
         .header-block h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.8px; }
 
-        .bento-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        
-        /* Modifikasi Elemen Anchor Bento Biar Interaktif Luar Dalam */
-        .bento-node { text-decoration: none; text-align: left; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 35px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-        .bento-node:hover { border-color: var(--accent-green); background: rgba(22, 22, 23, 0.8); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(47, 228, 138, 0.05); }
+        /* ── BENTO GRID ── */
+        .bento-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 24px;
+        }
 
-        .col-2 { grid-column: span 2; }
+        .bento-node {
+            text-decoration: none; text-align: left;
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 24px; padding: 35px;
+            display: flex; flex-direction: column; justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bento-node:hover {
+            border-color: var(--accent-green); background: rgba(22, 22, 23, 0.8);
+            transform: translateY(-4px); box-shadow: 0 12px 30px rgba(47, 228, 138, 0.05);
+        }
+
+        /* Row 1: K's Tools (col-2) + Romansa (col-1) */
+        .node-ktools   { grid-column: span 2; }
+        .node-romansa  { grid-column: span 1; }
+
+        /* Row 2: Curhatdy (col-2) — single wide card */
+        .node-curhatdy { grid-column: span 2; }
+
         .node-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .node-tag { font-family: var(--font-mono); font-size: 10px; background: rgba(255,255,255,0.04); padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border-color); color: var(--text-secondary); transition: all 0.3s ease; }
+        .node-tag {
+            font-family: var(--font-mono); font-size: 10px;
+            background: rgba(255,255,255,0.04); padding: 5px 12px;
+            border-radius: 6px; border: 1px solid var(--border-color);
+            color: var(--text-secondary); transition: all 0.3s ease;
+        }
         .bento-node:hover .node-tag { color: var(--accent-green); border-color: rgba(47, 228, 138, 0.3); }
 
         .bento-node h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.3px; color: var(--text-primary); }
-        .bento-node p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+        .bento-node p  { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
 
-        .node-display { width: 100%; height: 150px; background: #08080a; border-radius: 14px; margin-top: 25px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; overflow: hidden; transition: all 0.3s ease; }
-        .bento-node:hover .node-display { color: var(--accent-green); border-color: rgba(47, 228, 138, 0.2); background: #0d0d11; }
+        .node-display {
+            width: 100%; height: 150px;
+            background: #08080a; border-radius: 14px; margin-top: 25px;
+            border: 1px solid var(--border-color);
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; transition: all 0.3s ease;
+        }
+        .bento-node:hover .node-display { border-color: rgba(47, 228, 138, 0.2); background: #0d0d11; }
+        .node-display img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
 
-        .node-display img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
+        /* Curhatdy placeholder display (no screenshot yet) */
+        .node-display-curhatdy {
+            width: 100%; height: 150px;
+            background: linear-gradient(135deg, rgba(47,228,138,0.04) 0%, rgba(0,0,0,0) 100%);
+            border-radius: 14px; margin-top: 25px;
+            border: 1px solid var(--border-color);
+            display: flex; align-items: center; justify-content: center;
+            gap: 14px; overflow: hidden; transition: all 0.3s ease;
+        }
+        .bento-node:hover .node-display-curhatdy { border-color: rgba(47, 228, 138, 0.2); }
+
+        .curhatdy-badge {
+            font-family: var(--font-mono); font-size: 11px;
+            color: var(--accent-green); letter-spacing: 0.5px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .curhatdy-badge::before {
+            content: '';
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent-green);
+            box-shadow: 0 0 8px var(--accent-green);
+            animation: pulseGlow 2s infinite;
+            flex-shrink: 0;
         }
 
+        /* ── IDENTITY ── */
         .identity-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 45px; align-items: start; }
         .biography p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 20px; text-align: justify; }
 
@@ -135,6 +178,7 @@
         .pill-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
         .pill-cloud span { font-family: var(--font-mono); font-size: 11px; padding: 6px 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 20px; color: var(--text-secondary); }
 
+        /* ── RATES ── */
         .rate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .rate-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 45px 35px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; position: relative; }
         .rate-card.highlight { border-color: var(--accent-green); background: rgba(10, 15, 12, 0.7); }
@@ -148,15 +192,17 @@
         .bullet-perks li { font-size: 14px; color: var(--text-secondary); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
         .bullet-perks i { color: var(--accent-green); font-size: 11px; }
 
-        .btn-checkout { width: 100%; padding: 14px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); color: var(--text-primary); font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: block; }
+        .btn-checkout { width: 100%; padding: 14px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); color: var(--text-primary); font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: block; text-align: center; }
         .rate-card.highlight .btn-checkout { background: var(--accent-green); color: #000; border: none; }
         .btn-checkout:hover { transform: translateY(-2px); background: var(--text-primary); color: #000; }
 
         footer { padding: 40px 6%; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); }
 
+        /* ── RESPONSIVE ── */
         @media (max-width: 992px) {
-            .bento-layout, .rate-grid { grid-template-columns: 1fr; }
-            .col-2 { grid-column: span 1; }
+            .bento-layout  { grid-template-columns: 1fr; }
+            .node-ktools, .node-romansa, .node-curhatdy { grid-column: span 1; }
+            .rate-grid     { grid-template-columns: 1fr; }
             .identity-split { grid-template-columns: 1fr; gap: 35px; }
             nav { padding: 18px 5%; }
             .nav-links { display: none; }
@@ -203,8 +249,9 @@
         </div>
         
         <div class="bento-layout">
-            <!-- K's Tools for School -->
-            <a href="https://kian1904.github.io/ringkas-tugas/" target="_blank" class="bento-node col-2 reveal">
+
+            <!-- Row 1: K's Tools (wide) + Romansa (narrow) -->
+            <a href="https://kian1904.github.io/ringkas-tugas/" target="_blank" class="bento-node node-ktools reveal">
                 <div class="node-top">
                     <span class="node-tag">Web App + AI Core <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 5px;"></i></span>
                 </div>
@@ -217,8 +264,7 @@
                 </div>
             </a>
 
-            <!-- Custom Web Romansa -->
-            <a href="https://untuk-sila.netlify.app/" target="_blank" class="bento-node reveal">
+            <a href="https://untuk-sila.netlify.app/" target="_blank" class="bento-node node-romansa reveal">
                 <div class="node-top">
                     <span class="node-tag">Custom Website <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 5px;"></i></span>
                 </div>
@@ -230,6 +276,21 @@
                     <img src="Custom website.jpg" alt="Custom Web Romansa">
                 </div>
             </a>
+
+            <!-- Row 2: Curhatdy (wide) -->
+            <a href="https://curhatdy.netlify.app/" target="_blank" class="bento-node node-curhatdy reveal">
+                <div class="node-top">
+                    <span class="node-tag">Web App <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 5px;"></i></span>
+                </div>
+                <div>
+                    <h3>Curhatdy</h3>
+                    <p>Platform jasa layanan curhat berbasis web yang menghubungkan pengguna dengan pendengar profesional secara real-time. Dirancang dengan antarmuka yang bersih dan alur pemesanan sesi yang intuitif — menjembatani kebutuhan emosional pengguna dengan layanan yang dapat dipercaya.</p>
+                </div>
+                <div class="node-display-curhatdy">
+                    <div class="curhatdy-badge">Live — curhatdy.netlify.app</div>
+                </div>
+            </a>
+
         </div>
     </section>
 
